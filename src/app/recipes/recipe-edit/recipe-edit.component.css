@@ -1,0 +1,21 @@
+.delete {
+    margin-top: 24px;
+}
+
+.ingredients-title {
+    margin-bottom: 20px;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.required-label::after {
+    content: " *";
+    color: red;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
