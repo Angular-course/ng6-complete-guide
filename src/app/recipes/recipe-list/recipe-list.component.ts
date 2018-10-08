@@ -32,7 +32,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    onNewRecipe = () => {
+    onNewRecipe () {
         this.router.navigate(['new'], {relativeTo: this.activatedRoute});
     };
 }
