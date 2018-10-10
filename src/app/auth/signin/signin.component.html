@@ -1,0 +1,45 @@
+<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <form (ngSubmit)="onSignin(f)" #f="ngForm">
+        <div class="form-group">
+            <label for="email"
+                   class="required-label">Mail</label>
+            <input type="email"
+                   class="form-control"
+                   id="email"
+                   name="email"
+                   ngModel=""
+                   required=""
+                   email=""
+                   #email="ngModel">
+            <div *ngIf="email.invalid && email.touched">
+                <p class="help-block"
+                   *ngIf="email.errors['email']">
+                    Please enter a valid email address.
+                </p>
+                <p class="help-block"
+                   *ngIf="email.errors['required']">
+                    Email address is required!
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password"
+                   class="required-label">Password</label>
+            <input type="password"
+                   class="form-control"
+                   id="password"
+                   name="password"
+                   ngModel=""
+                   required=""
+                   #password="ngModel">
+            <p class="help-block"
+               *ngIf="password.invalid && password.touched">
+                Password is required!
+            </p>
+        </div>
+        <button class="btn btn-primary"
+                type="submit"
+                [disabled]="f.invalid">Sign in
+        </button>
+    </form>
+</div>
