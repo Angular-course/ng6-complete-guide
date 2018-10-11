@@ -11,24 +11,22 @@ import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {DataStorageService} from './shared/data-storage.service';
-import {SigninComponent} from './auth/signin/signin.component';
-import {SignupComponent} from './auth/signup/signup.component';
 import {AuthService} from './auth/auth.service';
 import {AuthGuardService} from './auth/auth-guard.service';
 import {RecipesModule} from './recipes/modules/recipes/recipes.module';
 import {SharedModule} from './shared/modules/shared.module';
+import {AuthModule} from './auth/modules/auth/auth.module';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         ShoppingListComponent,
-        ShoppingEditComponent,
-        SigninComponent,
-        SignupComponent
+        ShoppingEditComponent
     ],
     imports: [
         BrowserModule,
+        AuthModule,
         RecipesModule,
         AppRoutingModule,
         FormsModule,
