@@ -10,26 +10,27 @@ import {AppRoutingModule} from './app-routing.module';
 import {DataStorageService} from './shared/data-storage.service';
 import {AuthService} from './auth/auth.service';
 import {AuthGuardService} from './auth/auth-guard.service';
-import {RecipesModule} from './recipes/modules/recipes/recipes.module';
 import {SharedModule} from './shared/modules/shared.module';
 import {AuthModule} from './auth/modules/auth/auth.module';
 import {ShoppingListModule} from './shopping-list/modules/shopping-list/shopping-list.module';
+import { HomeComponent } from './home/home.component';
+import {LazyAuthGuardService} from './auth/lazy-auth-guard.service';
 
 @NgModule({
     declarations: [
         AppComponent,
-        HeaderComponent
+        HeaderComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
         AuthModule,
-        RecipesModule,
         AppRoutingModule,
         HttpClientModule,
         SharedModule,
         ShoppingListModule
     ],
-    providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuardService],
+    providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuardService, LazyAuthGuardService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
